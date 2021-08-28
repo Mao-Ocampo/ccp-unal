@@ -1,14 +1,12 @@
 import './assets/styles.css';
-import { DefinitionModal } from './Components/Modals/DefinitionModal/DefinitionModal';
-import { EditModal } from './Components/Modals/EditModal/EditModal';
+import { Pages } from './Pages/pages';
 
 
 
 function App() {
   return (
     <div className="App">
-      <DefinitionModal/>
-      <EditModal/>
+      <Pages/>
     </div>
   );
 }
