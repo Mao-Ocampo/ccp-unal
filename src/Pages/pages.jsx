@@ -25,7 +25,7 @@ export const Pages =() => {
                     {info.title}
                     </DialogTitle>
                     <DialogContent dividers>
-                    Hola 
+                    {info.description}
                     </DialogContent>
                     <DialogActions>
                     <Button autoFocus onClick={handleClose} color="primary">
