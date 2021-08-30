@@ -290,6 +290,18 @@ export const Pages =() => {
           error: 'Este concepto no se puede eliminar',
           buttonOpen: () => cerrrarModalAbrirAlerta(),
           buttonClose: () => handleClose(),
+        },
+        activeSection: {
+          titles: [
+            {
+              name: '¿Activar sección?',
+              className: 'titleIcon'
+            }
+          ],
+          description: '¿Está seguro que desea activar la sección?',
+          buttonAccept: () => handleClose(),
+          buttonOpenText: 'ACEPTAR',
+          buttonCloseText: 'CANCELAR',  
         }
     }
     return (
@@ -318,6 +330,9 @@ export const Pages =() => {
           </AcceptButton>
           <AcceptButton variant="outlined" color="primary" onClick={() => handleOpenModela(valuesPerModals.delete)}>
                   Eliminar 
+          </AcceptButton>
+          <AcceptButton variant="outlined" color="primary" onClick={() => handleOpenModela(valuesPerModals.activeSection)}>
+                  Activar Sección  
           </AcceptButton>
         </Grid>
 
