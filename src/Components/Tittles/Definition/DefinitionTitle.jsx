@@ -5,24 +5,19 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 
 export const DefinitionTitle = (props) => {
 
-    const { titles, setInfo, info } = props
+    const { titles, setInfo, info, children } = props
   
-    const handleChange = (event) => {
-      setInfo({
-        ...info,
-        [event.target.name]: event.target.valu
-     });
-    }
       return (
           <>
             {titles ? titles.map((title) => (
-              <div className="definitionTtile" onChange={handleChange}>
+              <div className="definitionTtile" onChange={info.change}>
               <span >
                   <h3>{title.name}</h3>
               </span>
               <span className={title.className} id={title.id}>
                   {title.icon}
               </span>
+                {title.children}
           </div>
             )) : ''}
           </>

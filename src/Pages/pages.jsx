@@ -67,6 +67,7 @@ export const Pages =() => {
             success: modal.success,
             error: modal.error,
             desciptionAlert: modal.desciptionAlert,
+            children: modal.children,
         })
         setOpen(true);
     }
@@ -83,7 +84,14 @@ export const Pages =() => {
       setopenAlert(false)
       setOpen(false)
     }
+    const handleChange = (event) => {
+      setInfo({
+        ...info,
+        [event.target.name]: event.target.valu
+     });
+    }
     const valuesPerModals = {
+        change: () => handleChange(),
         addSection: {
           titles: [
             {
