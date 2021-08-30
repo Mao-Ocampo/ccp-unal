@@ -1,6 +1,7 @@
 import React from 'react';
 import './pages.css';
-import myimage from '../assets/img/icons/slideOn.png';
+import { SlideOff } from '../Components/Icons/SlideOff';
+import { SlideOn } from '../Components/Icons/SlideOn';
 import {  Dialog, DialogActions, DialogContent, DialogTitle, Divider, Grid, Paper, withStyles, } from '@material-ui/core';
 import { TextfielDescription } from '../Components/Texts/TextFieldCode/TextfieldCode';
 import { DefinitionText } from '../Components/Texts/Definition/DefinitionText';
@@ -296,7 +297,7 @@ export const Pages =() => {
           titles: [
             {
               name: '¿Activar sección?',
-              icon: <myimage url={myimage}/>,
+              icon: <SlideOn/>,
               className: 'titleIcon',
             }
           ],
@@ -310,7 +311,7 @@ export const Pages =() => {
           titles: [
             {
               name: '¿Inctivar sección?',
-              icon: <myimage url={myimage}/>,
+              icon: <SlideOff/>,
               className: 'titleIcon',
             }
           ],
@@ -324,7 +325,7 @@ export const Pages =() => {
           titles: [
             {
               name: '¿Activar Grupo con sus niveles superiores?',
-              icon: <myimage url={myimage}/>,
+              icon: <SlideOn/>,
               className: 'titleIcon',
             }
           ],
@@ -338,7 +339,7 @@ export const Pages =() => {
           titles: [
             {
               name: '¿Activar Subclase con sus niveles superiores?',
-              icon: <myimage url={myimage}/>,
+              icon: <SlideOn/>,
               className: 'titleIcon',
             }
           ],
@@ -352,7 +353,7 @@ export const Pages =() => {
           titles: [
             {
               name: '¿Activar Subclase 2 con sus niveles superiores?',
-              icon: <myimage url={myimage}/>,
+              icon: <SlideOn/>,
               className: 'titleIcon',
             }
           ],
