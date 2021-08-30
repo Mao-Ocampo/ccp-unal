@@ -3,8 +3,6 @@ import './TextfieldCode.css'
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core';
 
-const DescriptionT = "Gastos destinados a..... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eleifend lorem ut sapien pulvinar auctor non vulputate diam. Nam consequat dolor ac finibus vestibulum. Fusce rutrum pellentesque lorem, quis sodales nisl. Ut vel dolor a mauris maximus pellentesque. Nam congue congue lectus id dictum. Aenean rhoncus a est at scelerisque."
-const NameT = "Accesorios para encuadernadores de hojas intercambiables y para clasificadores; sujetadores, cantoneras, clips, índices señaladores y artículos análogos para oficina, de metales comunes; grapas en tiras, de metales comunes"
 
 const CssTextField = withStyles({
     root: {
@@ -33,37 +31,43 @@ const CssTextField = withStyles({
         padding: "3% 6%",
         fontSize: 16,
         color: "#696363",
+      },
+      '& .MuiFormControl-root' : {
+        border: 0,
+        marginTop: 5,
+        display: 'inline-flex',
+        padding: 0,
+        position: 'relative',
+        minWidth: 0,
+        flexDirection: 'column',
+        verticalAlign: 'top',
       }
     },
   })(TextField);
 
 
-export const TextfielCode =() => {
-    return (
-        <CssTextField  label="Código de la  sección" variant="outlined" defaultValue="04"/>
-    )
-}
-export const TextfielName =() => {
-  const [value, setValue] = React.useState(NameT);
+
+export const TextfielDescription = (props) => {
+
+  const { keys, setInfo, info } = props
 
   const handleChange = (event) => {
-    setValue(event.target.value);
-  };
+    setInfo({
+      ...info,
+      [event.target.name]: event.target.valu
+   });
+  }
     return (
-        <CssTextField multiline
-        value={value}
-        onChange={handleChange} label="Nombre de la  sección" variant="outlined" />
-    )
-}
-export const TextfielDescription =() => {
-  const [value, setValue] = React.useState(DescriptionT);
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-    return (
-        <CssTextField multiline
-        value={value}
-        onChange={handleChange} label="Descripción de la  sección" variant="outlined" />
+        <>
+          {keys ? keys.map((key) => (
+            <CssTextField multiline
+              value={info.name}
+              name={key.name}
+              onChange={handleChange} 
+              label={key.label } 
+              variant="outlined"
+            />
+          )) : ''}
+        </>
     )
 }
