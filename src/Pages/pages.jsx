@@ -1,7 +1,8 @@
 import React from 'react';
 import './pages.css';
-import {  Dialog, DialogActions, DialogContent, DialogTitle, Divider, Grid,Paper, withStyles, } from '@material-ui/core';
-import { TextfielDescription } from '../Components/Texts/TextFieldCode/TextfieldCode'
+import myimage from '../assets/img/icons/slideOn.png';
+import {  Dialog, DialogActions, DialogContent, DialogTitle, Divider, Grid, Paper, withStyles, } from '@material-ui/core';
+import { TextfielDescription } from '../Components/Texts/TextFieldCode/TextfieldCode';
 import { DefinitionText } from '../Components/Texts/Definition/DefinitionText';
 import { AcceptButton } from '../Components/Buttons/AcceptButton/Accept';
 import { CancelButton } from '../Components/Buttons/CancelButton/Cancel';
@@ -295,14 +296,72 @@ export const Pages =() => {
           titles: [
             {
               name: '¿Activar sección?',
-              className: 'titleIcon'
+              icon: <myimage url={myimage}/>,
+              className: 'titleIcon',
             }
           ],
           description: '¿Está seguro que desea activar la sección?',
           buttonAccept: () => handleClose(),
+          buttonClose: () => handleClose(),
           buttonOpenText: 'ACEPTAR',
           buttonCloseText: 'CANCELAR',  
-        }
+        },
+        inactiveSection: {
+          titles: [
+            {
+              name: '¿Inctivar sección?',
+              icon: <myimage url={myimage}/>,
+              className: 'titleIcon',
+            }
+          ],
+          description: '¿Está seguro que desea inactivar la sección?',
+          buttonAccept: () => handleClose(),
+          buttonClose: () => handleClose(),
+          buttonOpenText: 'ACEPTAR',
+          buttonCloseText: 'CANCELAR',  
+        },
+        ActiveGroupSection: {
+          titles: [
+            {
+              name: '¿Activar Grupo con sus niveles superiores?',
+              icon: <myimage url={myimage}/>,
+              className: 'titleIcon',
+            }
+          ],
+          description: 'Esta acción activará los niveles superiores que contienen a este concepto.',
+          buttonAccept: () => handleClose(),
+          buttonClose: () => handleClose(),
+          buttonOpenText: 'ACEPTAR',
+          buttonCloseText: 'CANCELAR',  
+        },
+        ActiveSubclassSection: {
+          titles: [
+            {
+              name: '¿Activar Subclase con sus niveles superiores?',
+              icon: <myimage url={myimage}/>,
+              className: 'titleIcon',
+            }
+          ],
+          description: 'Esta acción activará los niveles superiores que contienen a este concepto.',
+          buttonAccept: () => handleClose(),
+          buttonClose: () => handleClose(),
+          buttonOpenText: 'ACEPTAR',
+          buttonCloseText: 'CANCELAR',  
+        },
+        ActiveSubclass2Section: {
+          titles: [
+            {
+              name: '¿Activar Subclase 2 con sus niveles superiores?',
+              icon: <myimage url={myimage}/>,
+              className: 'titleIcon',
+            }
+          ],
+          description: 'Esta acción activará los niveles superiores que contienen a este concepto.',
+          buttonAccept: () => handleClose(),
+          buttonClose: () => handleClose(),
+          buttonOpenText: 'ACEPTAR',
+          buttonCloseText: 'CANCELAR',  
+        },
     }
     return (
       <Paper style={{padding: 12}}>
@@ -333,6 +392,18 @@ export const Pages =() => {
           </AcceptButton>
           <AcceptButton variant="outlined" color="primary" onClick={() => handleOpenModela(valuesPerModals.activeSection)}>
                   Activar Sección  
+          </AcceptButton>
+          <AcceptButton variant="outlined" color="primary" onClick={() => handleOpenModela(valuesPerModals.inactiveSection)}>
+                  Inactivar Sección  
+          </AcceptButton>
+          <AcceptButton variant="outlined" color="primary" onClick={() => handleOpenModela(valuesPerModals.ActiveGroupSection)}>
+                  Activar Grupo Sección  
+          </AcceptButton>
+          <AcceptButton variant="outlined" color="primary" onClick={() => handleOpenModela(valuesPerModals.ActiveSubclassSection)}>
+                  Activar Subclase Sección  
+          </AcceptButton>
+          <AcceptButton variant="outlined" color="primary" onClick={() => handleOpenModela(valuesPerModals.ActiveSubclass2Section)}>
+                  Activar Subclase 2 Sección  
           </AcceptButton>
         </Grid>
 
